@@ -1,0 +1,18 @@
+{
+    "name": "easybencode/bencode",
+    "description": "A simple and complete bencode encoder/decoder",
+    "minimum-stability": "stable",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Jesse Schalken",
+            "email": "me@jesseschalken.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "classmap": [""]
+    }
+}
