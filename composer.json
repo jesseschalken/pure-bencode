@@ -2,7 +2,7 @@
     "name": "purebencode/purebencode",
     "description": "A simple and complete bencode encoder/decoder",
     "minimum-stability": "stable",
-    "license": "mit",
+    "license": "MIT",
     "authors": [
         {
             "name": "Jesse Schalken",
