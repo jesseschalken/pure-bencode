@@ -1,6 +1,6 @@
 <?php
 
-namespace EasyBencode;
+namespace PureBencode;
 
 class BencodeTest extends \PHPUnit_Framework_TestCase {
     function testNumbers() {

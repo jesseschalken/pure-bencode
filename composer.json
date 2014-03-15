@@ -1,5 +1,5 @@
 {
-    "name": "easybencode/bencode",
+    "name": "purebencode/purebencode",
     "description": "A simple and complete bencode encoder/decoder",
     "minimum-stability": "stable",
     "license": "mit",

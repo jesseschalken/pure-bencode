@@ -1,6 +1,6 @@
 <?php
 
-namespace EasyBencode;
+namespace PureBencode;
 
 class Bencode {
     /**
