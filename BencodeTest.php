@@ -125,5 +125,48 @@ s;
     function testBool() {
         Bencode::encode(true);
     }
+
+    function testDictionarySortOrder() {
+        $keysUnsorted = array(
+            "\n",
+            "\t",
+            '',
+            "\xff",
+            "\xff\x00",
+            '0',
+            'baaa',
+            'abbb',
+            '00',
+            '000',
+            "\x00",
+            ' ',
+            '10',
+            '1',
+            '01',
+        );
+
+        $keysSorted = array(
+            '',
+            "\x00",
+            "\t",
+            "\n",
+            " ",
+            '0',
+            '00',
+            '000',
+            '01',
+            '1',
+            '10',
+            'abbb',
+            'baaa',
+            "\xff",
+            "\xff\x00",
+        );
+
+        $dictionary = array_fill_keys($keysUnsorted, 0);
+        $dictionary2 = Bencode::decode(Bencode::encode($dictionary));
+
+        self::assertEquals($keysSorted, array_keys($dictionary2));
+    }
 }
  

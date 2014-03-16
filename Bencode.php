@@ -11,6 +11,7 @@ class Bencode {
     static function encode($value) {
         if (is_array($value)) {
             if (self::isAssoc($value)) {
+                ksort($value, SORT_STRING);
                 $result = '';
 
                 foreach ($value as $k => $v)
