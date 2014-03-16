@@ -83,7 +83,7 @@ s;
     }
 
     function testDictionary() {
-        self::assertBencode(array('foo' => 'bar', 'baz' => 'boo'), 'd3:foo3:bar3:baz3:booe');
+        self::assertBencode(array('baz' => 'bar', 'foo' => 'boo'), 'd3:baz3:bar3:foo3:booe');
     }
 
     /**
