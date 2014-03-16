@@ -84,15 +84,12 @@ class BencodeParser {
                 $result = array();
 
                 while ($this->read() !== 'e')
-                    $result[$this->decode()] = $this->decode();
+                    $result[$this->parseString()] = $this->decode();
 
                 $this->seek();
                 return $result;
             default:
-                $len = $this->readInt(':');
-                if ($len < 0)
-                    throw new Exception("Length of string ($len) must not be negative");
-                return $this->remove($len);
+                return $this->parseString();
         }
     }
 
@@ -130,6 +127,13 @@ class BencodeParser {
         if ($pos === false)
             throw new Exception("'$needle' not found");
         return $pos - $this->pos;
+    }
+
+    private function parseString() {
+        $len = $this->readInt(':');
+        if ($len < 0)
+            throw new Exception("Length of string ($len) must not be negative");
+        return $this->remove($len);
     }
 }
 

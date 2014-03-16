@@ -168,5 +168,13 @@ s;
 
         self::assertEquals($keysSorted, array_keys($dictionary2));
     }
+
+    /**
+     * @expectedException Exception
+     * @expectedExceptionMessage ':' not found
+     */
+    function testInvalidDictionaryKey() {
+        Bencode::decode("di8ei4ee");
+    }
 }
  
